@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+}
+
+.wrap {
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+nav .wrap {
+    position: relative;
+}
+
+nav .wrap a .logo {
+    height: 30px;
+    padding-top: 25px;
+}
+
+nav .wrap a .social {
+    height: 30px;
+    top: 25px;
+    right: 0;
+    padding-right: 30px;
+    position: absolute;
+}
+
+header {
+    height: calc(100% - 50px);
+    width: 100%;
+    background: url(img/Img.png) no-repeat top center;
+    background-size: cover;
+    border-top: 1px solid #333;
+}
+
+header .wrap {
+    margin-top: 150px;
+    text-align: center;
+}
+
+header .wrap .logo {
+    width: 300px;
+}
+
+header .wrap h2 {
+    margin-top: 2em;
+    color: #FCCD01;
+    font-weight: 100;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: #FCCD01;
+}
+
+header .wrap h1 {
+    text-transform: uppercase;
+    font-size: 2.8em;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.1em;
+}
+
+header .wrap hr {
+    width: 60px;
+    color: #FCCD01;
+    background-color: #FCCD01;
+    border: 1px solid #FCCD01;
+    margin: 25px auto;
+}
+
+header .wrap p {
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+#services .wrap h2 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 90px;
+}
+
+#services .wrap .flex-container {
+    display: flex;
+    text-align: center;
+}
+
+#services .wrap .flex-container .card {
+    margin-top: 90px;
+    padding: 0 15px;
+    margin-bottom: 100px;
+}
+
+#services .wrap .flex-container .card img {
+    height: 76px;
+}
+
+#services .wrap .flex-container .card h3 {
+    margin-top: 40px;
+    text-transform: uppercase;
+}
+
+#services .wrap .flex-container .card hr {
+    width: 60px;
+    color: #FCCD01;
+    background-color: #FCCD01;
+    border: 1px solid #FCCD01;
+    margin: 25px auto 15px auto;
+}
