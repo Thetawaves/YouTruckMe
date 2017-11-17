@@ -13,6 +13,8 @@ body {
     font-size: 18px;
 }
 
+/* Navbar */
+
 nav {
     height: 80px;
     width: 100%;
@@ -22,7 +24,7 @@ nav {
 }
 
 .wrap {
-    max-width: 1242px;
+    width: 1242px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 30px;
@@ -41,13 +43,13 @@ nav .wrap a .logo {
 nav .wrap a .social {
     height: 30px;
     top: 25px;
-    right: 0;
-    padding-right: 30px;
+    right: 30px;
     position: absolute;
 }
 
+/* Header */
+
 header {
-    height: calc(100% - 50px);
     width: 100%;
     background: url(img/Img.png) no-repeat top center;
     background-size: cover;
@@ -57,6 +59,7 @@ header {
 header .wrap {
     margin-top: 150px;
     text-align: center;
+    padding-bottom: 100px;
 }
 
 header .wrap .logo {
@@ -80,11 +83,11 @@ header .wrap h1 {
     letter-spacing: 0.1em;
 }
 
-header .wrap hr {
+hr {
     width: 60px;
     color: #FCCD01;
     background-color: #FCCD01;
-    border: 1px solid #FCCD01;
+    border: 2px solid #FCCD01;
     margin: 25px auto;
 }
 
@@ -94,6 +97,8 @@ header .wrap p {
     line-height: 1.5em;
 }
 
+/* Services Section */
+
 #services .wrap h2 {
     text-transform: uppercase;
     text-align: center;
@@ -101,12 +106,12 @@ header .wrap p {
 }
 
 #services .wrap .flex-container {
+    margin-top: 70px;
     display: flex;
     text-align: center;
 }
 
 #services .wrap .flex-container .card {
-    margin-top: 90px;
     padding: 0 15px;
     margin-bottom: 100px;
 }
@@ -121,9 +126,224 @@ header .wrap p {
 }
 
 #services .wrap .flex-container .card hr {
-    width: 60px;
-    color: #FCCD01;
-    background-color: #FCCD01;
-    border: 1px solid #FCCD01;
     margin: 25px auto 15px auto;
+}
+
+/* Contact Section */
+
+#contact {
+    width: 100%;
+    background-color: #FCCD01;
+}
+
+#contact .wrap {
+    display: flex;
+}
+
+#contact .wrap .info {
+    width: 30%;
+}
+
+#contact .wrap .info h3 {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 100;
+    padding: 20px 0;
+    font-size: 1.25em;
+}
+
+#contact .wrap .info hr {
+    margin: 0;
+    border: 2px solid #fff;
+}
+
+#contact .wrap .info p {
+    padding-top: 20px;
+}
+
+#contact .wrap .img {
+    width: calc(30% - 20px);
+    height: 60%;
+    padding: 0 10px;
+}
+
+#contact .wrap .info h2 {
+    padding: 40px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 2em;
+}
+
+#contact .wrap .info .icons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#contact .wrap .info .icons a:nth-child(2) {
+    padding: 0 0 0 80px;
+}
+
+#contact .wrap .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+#contact .wrap .contact-form {
+    background-color: #EFF0F2;
+    width: 40%;
+}
+
+#contact .wrap .contact-form h3 {
+    text-transform: uppercase;
+    font-weight: 100;
+    padding: 20px 0;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+#contact .wrap .contact-form hr {
+    margin: 0 auto;
+}
+
+#contact .wrap .contact-form form {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#contact .wrap .contact-form form label {
+    text-transform: uppercase;
+}
+
+#contact .wrap .contact-form form input {
+    width: 100%;
+    height: 36px;
+    background-color: #EFF0F2;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+
+/* The switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 30px;
+}
+
+.switch input {
+    display:none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #FCCD01;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #FCCD01;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 30px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Breakpoints */
+
+    /* Medium */
+
+@media screen and (max-width: 1299px) {
+    .wrap {
+        max-width: 738px;
+    }
+
+    #services .wrap .flex-container {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    #services .wrap .flex-container .card {
+        width: 300px;
+    }
+
+    #contact .wrap {
+        max-width: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    #contact .wrap .info {
+        width: 50%;
+        text-align: center;
+    }
+
+    #contact .wrap .info hr {
+        margin: 0 auto;
+    }
+
+    #contact .wrap .info p {
+        padding: 20px 10px;
+    }
+
+    #contact .wrap .info .icons {
+        justify-content: space-around;
+    }
+
+    #contact .wrap .img {
+        display: none;
+    }
+
+    #contact .wrap .contact-form {
+        width: 50%
+    }
+
+}
+
+    /* Small */
+
+@media screen and (max-width: 767px) {
+    .wrap {
+        max-width: calc(100% - 60px);
+    }
+
+    #services .wrap .flex-container .card {
+        width: 100%;
+        max-width: 400px;
+    }
 }
