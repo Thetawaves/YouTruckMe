@@ -15,6 +15,13 @@
             <a href="https://www.facebook.com/YouTruckMe/?hc_ref=ARRdpa6SKIVRwaMvxQr56Z1YvaZE_YfBvlSivuDR7zdb30T6apnp3kJTfiFmSrGHRJE&fref=nf" target="_blank"><img class="social" src="img/Navbar.svg" /></a>
         </div>
     </nav>
+    <div class="modal">
+        <div class="text-box">
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>A gentleman from New York discovered what he calls an “oversight” on the part of 99.9% of all marketers that allows</p>
+            <button>Close</button>
+        </div>
+    </div>
     <header>
         <div class="wrap">
             <img class="logo" src="img/logo.png" />
@@ -56,6 +63,7 @@
         </div>
     </section>
     <section id="contact">
+        <div class="right-side-gray"></div>
         <div class="wrap">
             <div class="info">
                 <h3>Lorem Ipsum</h3>
@@ -77,24 +85,28 @@
                     <p>Name</p>
 				    <input type="text" placeholder="Text here" required /><br />
                     <p>Email</p>
-				    <input type="text" placeholder="Text here"/><br />
+				    <input type="email" placeholder="Text here" required /><br />
                     <p>Type of User</p>
-                    <select name="user">
-                        <option value="null" selected></option>
+                    <select name="user" required>
+                        <option disabled value="null" selected hidden>Select</option>
                         <option value="trucker">Trucker</option>
                         <option value="fan">Fan</option>
                         <option value="shipper">Load to Ship</option>
                     </select><br />
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                        <p>Agree with Privacy Terms &amp; Conditions</p>
-                    </label>
+                    <div id="slide-wrap">
+                        <div id="slide">
+                            <input name="terms" id="terms" type="checkbox" required />
+                            <label for="terms"></label>
+                        </div>
+                        <p>Agree with <a href="#">Privacy Terms &amp; Conditions</a></p>
+                    </div>
+                    <br />
+                    <input type="submit" value="Send">
                 </form>
             </div>
         </div>
     </section>
-    <section>
+    <section id="last">
         <div class="wrap">
             <div class="card">
                 <h3>Are you a fan?</h3>
@@ -113,7 +125,37 @@
             </div>
         </div>
     </section>
+    <footer>
+        <div class="wrap">
+            <div class="card">
+                <h2>Lorem</h2>
+                <p>Marketers/advertisers usually focus their efforts on the people responsible for making the purchase. In many cases, this is an effective approach but in other cases it can make for a totally useless marketing campaign.</p>
+            </div>
+            <div class="card">
+                <h2>Ipsum</h2>
+                <p>Conversations can be a tricky business. Sometimes, decoding what is said with what is meant is difficult at best.</p>
+            </div>
+            <div class="card">
+                <h2>Dolor</h2>
+                <p>Forget Ebay and other forms of advertising for your property that costs you hard earned money. Why not do it all for free?</p>
+            </div>
+            <div class="card">
+                <h2>Follow Us</h2>
+                <div class="social">
+                    <a href="https://www.facebook.com/YouTruckMe/?hc_ref=ARRdpa6SKIVRwaMvxQr56Z1YvaZE_YfBvlSivuDR7zdb30T6apnp3kJTfiFmSrGHRJE&fref=nf" target="_blank"><img src="img/facebook.svg" /></a>
+                    <a href="https://twitter.com/youtruckme" target="_blank"><img src="img/twitter.svg" /></a>
+                    <a href="https://www.instagram.com/youtruckme/" target="_blank"><img src="img/instagram.svg" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p><span>&copy; 2017 YouTruckMe</span> - All Rights Reserved</p>
+        </div>
+    </footer>
+
+
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
