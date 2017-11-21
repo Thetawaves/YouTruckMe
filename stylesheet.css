@@ -13,6 +13,49 @@ body {
     font-size: 18px;
 }
 
+/* Animations */
+
+@keyframes slideUpFade {
+    from {
+        transform: translateY(300px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+.slideUpFade {
+    animation: slideUpFade 0.5s forwards;
+}
+
+@keyframes popUp {
+    0% {transform: scale(0)}
+    80% {transform: scale(1.2)}
+    100% {transform: scale(1)}
+}
+
+.popUp {
+    animation: popUp 0.5s forwards;
+}
+
+@keyframes slideRightFade {
+    from {
+        transform: translateX(-300px);
+        opacity: 0
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1
+    }
+}
+
+.slideRightFade {
+    animation: slideRightFade 0.5s forwards;
+}
+
 /* Navbar */
 
 nav {
@@ -117,6 +160,10 @@ header .wrap .logo {
     width: 300px;
 }
 
+header .wrap .slide-up {
+    opacity: 0;
+}
+
 header .wrap h2 {
     margin-top: 2em;
     color: #FCCD01;
@@ -169,6 +216,11 @@ header .wrap p {
 
 #services .wrap .flex-container .card img {
     height: 76px;
+    transform: scale(0);
+}
+
+#services .wrap .flex-container .card div {
+    opacity: 0;
 }
 
 #services .wrap .flex-container .card h3 {
@@ -207,6 +259,10 @@ header .wrap p {
     position: absolute;
 }
 
+#contact .wrap .info div {
+    opacity: 0;
+}
+
 #contact .wrap .info h3 {
     text-transform: uppercase;
     color: #fff;
@@ -232,6 +288,7 @@ header .wrap p {
     height: 100%;
     position: absolute;
     left: 380px;
+    overflow: hidden;
 }
 
 #contact .wrap .img img {
@@ -240,7 +297,7 @@ header .wrap p {
     object-fit: contain;
     position: absolute;
     bottom: 0;
-
+    opacity: 0;
 }
 
 #contact .wrap .info h2 {
@@ -404,8 +461,6 @@ header .wrap p {
     background-color: #FFE066;
 }
 
-
-
 #last {
     margin-bottom: 100px;
 }
@@ -419,6 +474,7 @@ header .wrap p {
 #last .wrap .card {
     max-width: 314px;
     padding: 0 15px;
+    opacity: 0;
 }
 
 #last .wrap .card h3 {
@@ -484,6 +540,7 @@ footer .copyright span {
     /* Medium */
 
 @media screen and (max-width: 1299px) {
+
     .wrap {
         width: 738px;
     }
@@ -523,7 +580,6 @@ footer .copyright span {
         margin-right: auto;
     }
 
-
     #contact .wrap .info .icons a:nth-of-type(2) img {
         margin-left: 50px;
     }
@@ -548,6 +604,10 @@ footer .copyright span {
 @media screen and (max-width: 767px) {
     .wrap {
         max-width: calc(100% - 60px);
+    }
+
+    header .wrap h1 {
+        font-size: 2em;
     }
 
     #services .wrap .flex-container .card {
@@ -608,6 +668,7 @@ footer .copyright span {
     }
 
     footer .copyright p {
+        font-size: 10px;
         max-width: calc(100% - 60px);
 
     }
