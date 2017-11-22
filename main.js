@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    /* Video resize */
+
+    var headerHeight = $("header").height();
+    $("video").attr("height", headerHeight);
+
+    $(window).on('resize', function () {
+        headerHeight = $("header").height();
+        $("video").attr("height", headerHeight);
+    });
+
     /* checkbox toggle */
 
     $("#contact .wrap .contact-form form input[type='checkbox']").on('click', function () {
@@ -8,7 +18,7 @@ $(document).ready(function () {
 
     /* PopUp Modal */
 
-    $("form").on('submit', function(e) {
+    $("form").on('submit', function (e) {
         e.preventDefault();
         $(".modal").fadeIn(300);
     });
@@ -28,7 +38,7 @@ $(document).ready(function () {
     /* Header */
     setTimeout(function () {
         $("header .wrap .slide-up").addClass('slideUpFade');
-    }, 1000)
+    }, 1000);
 
 
     /* Inline */
@@ -42,12 +52,21 @@ $(document).ready(function () {
 
     $(window).on('resize', function () {
         inlineScrollTop = $("#services .wrap .flex-container").offset().top;
+        accentScrollTop = $("#contact .wrap").offset().top;
+        lastScrollTop = $("#last .wrap").offset().top;
         windowHeight = ($(window).height()) / 2;
     });
 
     $(window).on('scroll', function () {
         scrollTop = $(window).scrollTop();
         if (windowHeight + scrollTop >= inlineScrollTop) {
+
+            $("#services .wrap .flex-container .card").each(function (i) {
+                $(this).delay(i * 300).queue(function () {
+                    $(this).find("div").addClass('slideUpFade').dequeue();
+                    $(this).find("img").addClass('popUp').dequeue();
+                });
+            });
 
             //// Soluzione bella ma non sempre funzionante ////
 
@@ -63,7 +82,7 @@ $(document).ready(function () {
 
             //// Soluzione brutta ma funzionante per il delay ////
 
-            setTimeout(function() {
+            /*setTimeout(function() {
                 $("#services .wrap .flex-container .card:nth-of-type(1) div").addClass('slideUpFade');
                 $("#services .wrap .flex-container .card:nth-of-type(1) img").addClass('popUp');
             }, 0);
@@ -78,19 +97,19 @@ $(document).ready(function () {
             setTimeout(function() {
                 $("#services .wrap .flex-container .card:nth-of-type(4) div").addClass('slideUpFade');
                 $("#services .wrap .flex-container .card:nth-of-type(4) img").addClass('popUp');
-            }, 900);
+            }, 900);*/
         }
 
         /* Accent */
 
         if (windowHeight + scrollTop >= accentScrollTop) {
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#contact .wrap .info div:nth-of-type(1)").addClass('slideRightFade');
             }, 0);
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#contact .wrap .info div:nth-of-type(2)").addClass('slideRightFade');
             }, 300);
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#contact .wrap .img img").addClass('slideUpFade');
             }, 600);
         }
@@ -98,18 +117,17 @@ $(document).ready(function () {
         /* Last */
 
         if (windowHeight + scrollTop >= lastScrollTop) {
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#last .wrap .card:nth-of-type(1)").addClass('slideUpFade');
             }, 0);
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#last .wrap .card:nth-of-type(2)").addClass('slideUpFade');
             }, 300);
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#last .wrap .card:nth-of-type(3)").addClass('slideUpFade');
             }, 600);
         }
     });
-
 
     /* Scroll top */
 
@@ -118,6 +136,6 @@ $(document).ready(function () {
         $("html, body").animate({
             scrollTop: 0
         }, 600);
-    })
+    });
 
-})
+});
